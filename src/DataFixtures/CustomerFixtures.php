@@ -9,7 +9,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class CustomerFixtures extends Fixture
 {
-
     private $encoder;
     private $manager;
 
@@ -26,7 +25,6 @@ class CustomerFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-
         $customer1 = $this->newCustomer('Client 1', 'admin');
         $this->addReference(self::CUSTOMER_ONE_REFERENCE, $customer1);
 
