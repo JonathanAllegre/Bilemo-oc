@@ -11,7 +11,6 @@ use Faker;
 
 class UserFixtures extends Fixture implements DependentFixtureInterface
 {
-
     private $manager;
 
     public function __construct(ObjectManager $manager)

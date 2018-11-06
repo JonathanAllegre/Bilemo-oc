@@ -52,6 +52,12 @@ class Product
      */
     private $description;
 
+    /**
+     * @var
+     * @ORM\Column(type="float")
+     */
+    private $weight;
+
 
     public function getId(): ?int
     {
@@ -171,4 +177,25 @@ class Product
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * @param $weight
+     * @return Product
+     */
+    public function setWeight($weight): self
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+
 }
