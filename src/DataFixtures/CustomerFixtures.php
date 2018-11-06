@@ -6,6 +6,7 @@ use App\Entity\Customer;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Faker;
 
 class CustomerFixtures extends Fixture
 {
@@ -25,16 +26,18 @@ class CustomerFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $customer1 = $this->newCustomer('Client 1', 'admin');
+        $faker = Faker\Factory::create('fr_FR');
+
+        $customer1 = $this->newCustomer($faker->company, 'admin');
         $this->addReference(self::CUSTOMER_ONE_REFERENCE, $customer1);
 
-        $customer2 = $this->newCustomer('Client 2', 'admin');
+        $customer2 = $this->newCustomer($faker->company, 'admin');
         $this->addReference(self::CUSTOMER_TWO_REFERENCE, $customer2);
 
-        $customer3 = $this->newCustomer('Client 3', 'admin');
+        $customer3 = $this->newCustomer($faker->company, 'admin');
         $this->addReference(self::CUSTOMER_THREE_REFERENCE, $customer3);
 
-        $customer4 = $this->newCustomer('Client 4', 'admin');
+        $customer4 = $this->newCustomer($faker->company, 'admin');
         $this->addReference(self::CUSTOMER_FOUR_REFERENCE, $customer4);
 
         $manager->flush();
