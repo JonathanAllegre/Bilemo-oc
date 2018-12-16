@@ -1,3 +1,9 @@
 api_platform:
+    title: 'Bilemo With Api Platform'
+    description: 'A simple Api With Api-Platform'
+    version: '1.0.0'
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
+    formats:
+        html:     ['text/html']
+        jsonhal:  ['application/hal+json']
